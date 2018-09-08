@@ -10,8 +10,7 @@ HOST_IP = os.environ["HOST_IP"]
 
 for instance_name in instance_names:
     commands_list = [
-        f'ls ',
-        f'pwd',
+        f'ifconfig',
     ]
     for cmd in commands_list:
         gcloud_plus_cmd = f'gcloud compute ssh {USER_NAME}@{instance_name} --command "{cmd}"'
