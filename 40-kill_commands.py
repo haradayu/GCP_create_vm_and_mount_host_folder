@@ -10,7 +10,8 @@ HOST_IP = os.environ["HOST_IP"]
 
 for instance_name in instance_names:
     commands_list = [
-        f'ifconfig',
+        f'export PATH=/home/yusuke/miniconda3/bin:$PATH \
+        && cd conoha/workspace/create_gce && python kill_mapper.py',
     ]
     for cmd in commands_list:
         gcloud_plus_cmd = f'gcloud compute ssh {USER_NAME}@{instance_name} --command "{cmd}"'
